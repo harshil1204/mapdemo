@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mapdemo/gooogleplaceapi.dart';
+import 'package:mapdemo/second/map_page.dart';
 
 import 'convertlatlon.dart';
 import 'homescreen.dart';
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(),
+      home: const MapPage(),
     );
   }
 }
