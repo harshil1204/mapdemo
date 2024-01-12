@@ -22,8 +22,11 @@ dependencies:
   geocoding: ^2.1.0
   geolocator: ^10.0.0
   location: ^5.0.3
-  http:
+  http: ^1.1.0
   uuid:
+  fluttertoast: ^8.2.4
+  provider: ^6.1.1
+  another_flushbar: ^1.12.30
 
 dev_dependencies:
   flutter_test:

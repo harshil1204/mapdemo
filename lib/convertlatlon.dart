@@ -33,7 +33,6 @@ class _ConvertltgState extends State<Convertltg> {
                       +placemarks.reversed.last.subLocality.toString()+" "
                       +placemarks.reversed.last.street.toString();
                 });
-
                 },
 
               child: Container(
