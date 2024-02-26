@@ -12,20 +12,20 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  static final LatLng _kMapCenter =
+  static const LatLng _kMapCenter =
   LatLng(23.013840, 72.505232);
-  Completer<GoogleMapController> _controller = Completer();
+  final Completer<GoogleMapController> _controller = Completer();
   
-  List<Marker> _markers=[];
-   List<Marker> _list=[
-    Marker(markerId:MarkerId("1"),
+  final List<Marker> _markers=[];
+   final List<Marker> _list=[
+    const Marker(markerId:MarkerId("1"),
     position: LatLng(23.013840, 72.505232),
       infoWindow: InfoWindow(
         title: "My Position",
         snippet: "hello"
-      )
+      ),
     ),
-    Marker(markerId:MarkerId("2"),
+    const Marker(markerId:MarkerId("2"),
         position: LatLng(23.013020, 72.508365),
         infoWindow: InfoWindow(
             title: "My Position",
@@ -50,19 +50,19 @@ class _MyHomePageState extends State<MyHomePage> {
     // TODO: implement initState
     super.initState();
   }
-  static final CameraPosition _kInitialPosition =
+  static const CameraPosition _kInitialPosition =
   CameraPosition(target: _kMapCenter, zoom: 14.0, tilt: 0, bearing: 0);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: GoogleMap(
-        compassEnabled: false,
+          compassEnabled: false,
           myLocationEnabled: true,
           markers: Set<Marker>.of(_markers),
           initialCameraPosition: _kInitialPosition,
-        onMapCreated: (controller) {
-          _controller.complete(controller);
-        },
+          onMapCreated: (controller) {
+            _controller.complete(controller);
+          },
       ),
       floatingActionButton: FloatingActionButton(onPressed: ()async{
         // GoogleMapController controller =await _controller.future;
@@ -91,7 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
         });
       },
-      child: Icon(Icons.location_city),
+      child: const Icon(Icons.location_city),
       ),
     );
   }
